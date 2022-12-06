@@ -73,6 +73,8 @@ public class Inicio_GUI extends javax.swing.JFrame {
         email3 = new javax.swing.JTextField();
         telefone3 = new javax.swing.JTextField();
         PESQUISAR = new javax.swing.JButton();
+        alterar = new javax.swing.JButton();
+        excluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -87,11 +89,11 @@ public class Inicio_GUI extends javax.swing.JFrame {
 
         nome.setText("NOME:");
         jPanel1.add(nome);
-        nome.setBounds(20, 90, 33, 20);
+        nome.setBounds(20, 90, 60, 20);
 
         email.setText("EMAIL:");
         jPanel1.add(email);
-        email.setBounds(20, 130, 40, 20);
+        email.setBounds(20, 130, 60, 20);
 
         email2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,20 +114,23 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(salvar);
-        salvar.setBounds(30, 260, 71, 23);
+        salvar.setBounds(80, 230, 90, 23);
 
         fechar.setText("X");
+        fechar.setMaximumSize(new java.awt.Dimension(71, 23));
+        fechar.setMinimumSize(new java.awt.Dimension(71, 23));
         fechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fecharActionPerformed(evt);
             }
         });
         jPanel1.add(fechar);
-        fechar.setBounds(290, 260, 39, 23);
+        fechar.setBounds(240, 230, 90, 23);
+        fechar.getAccessibleContext().setAccessibleDescription("");
 
         jLabel2.setText("TELEFONE:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 170, 54, 20);
+        jLabel2.setBounds(10, 170, 70, 20);
 
         jTabbedPane1.addTab("CADASTRAR", jPanel1);
 
@@ -167,30 +172,48 @@ public class Inicio_GUI extends javax.swing.JFrame {
             }
         });
 
+        alterar.setText("Alterar");
+        alterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alterarActionPerformed(evt);
+            }
+        });
+
+        excluir.setText("Excluir");
+        excluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PESQUISAR)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(33, 33, 33)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel6))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(cod3)
-                                .addComponent(nome3)
-                                .addComponent(email3)
-                                .addComponent(telefone3, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)))))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(PESQUISAR, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
+                            .addComponent(cod3)
+                            .addComponent(nome3)
+                            .addComponent(email3)
+                            .addComponent(telefone3, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -213,19 +236,22 @@ public class Inicio_GUI extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(telefone3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(PESQUISAR)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PESQUISAR, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("GERENCIAR", jPanel2);
 
         getContentPane().add(jTabbedPane1);
-        jTabbedPane1.setBounds(0, 0, 400, 300);
+        jTabbedPane1.setBounds(0, 0, 400, 320);
 
         bindingGroup.bind();
 
-        setSize(new java.awt.Dimension(400, 300));
+        setSize(new java.awt.Dimension(400, 323));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -346,6 +372,90 @@ public class Inicio_GUI extends javax.swing.JFrame {
         // --> fim
     }//GEN-LAST:event_PESQUISARActionPerformed
 
+    private void alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarActionPerformed
+        // -> inicio
+        
+        nom = nome3.getText(); // recebendo o nome
+      em = email3.getText(); // recebendo o email         
+      tel = Long.valueOf(telefone3.getText());// recebendo o telefone
+
+       
+      try {     
+            Connection con = null;
+      try {
+            con = (Connection) DriverManager.getConnection(url2, username, password);
+      }catch (SQLException ex) {
+            Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
+      }
+            String sql = "UPDATE cliente SET cli_nome='"+nom+"',cli_email='"+em+"',cli_tel='"+tel+"' WHERE cli_cod="+cod3.getText();
+            
+     
+            try { 
+                PreparedStatement inserir = (PreparedStatement) con.prepareStatement(sql);
+                inserir.execute(); // Executando a inserção
+
+                JOptionPane.showMessageDialog(null,"\nInserção realizada com sucesso!!!\n","",-1);
+                nome3.setText("");
+                email3.setText("");
+                telefone3.setText("");
+                cod3.setText("");
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null,"\nErro na inserção!","ERRO!",0);
+            }
+
+        }catch(NumberFormatException erro){
+            // Tratamento de erro caso o usuario não digite o telefone corretamente
+            JOptionPane.showMessageDialog(null,"Digite os dados corretamente \n Preencher telefone novamente.","ERRO",0);
+            telefone3.setText("");
+        }    
+
+        
+        // --> fim
+    }//GEN-LAST:event_alterarActionPerformed
+
+    private void excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirActionPerformed
+        // --> Inicio
+        
+                int codigo = Integer.valueOf(cod3.getText()); // Recebendo o código
+
+                
+
+        try {// Tratamento de erro para a conexao
+            // Declarando  a variavel de conexão con
+            // e estabelendo a conexão
+            Connection con = null;
+
+                try {
+                    con = (Connection) DriverManager.getConnection(url2, username, password);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
+           
+
+            // Criando String com comando SQL para exclusão
+            String sql = "DELETE FROM cliente WHERE cli_cod = "+codigo;
+
+            try // Tratamento de erros para exclusão
+            {// Criando Variavel para executar a ação
+                PreparedStatement excluir = (PreparedStatement) con.prepareStatement(sql);
+                excluir.execute();// Executando a exclusão
+
+                JOptionPane.showMessageDialog(null,"\nExclusão realizada com sucesso!!!\n","",-1);
+                cod3.setText("");
+
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null,"\nErro na exclusão!","ERRO!",0);
+            }
+
+        } catch(NumberFormatException erro){ // Codigo digitado com caracteres não numericos
+            JOptionPane.showMessageDialog(null,"Digite o código corretamante","ERRO",0);
+            cod3.setText("");
+
+        }
+        
+        // --> Fim
+    }//GEN-LAST:event_excluirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -383,6 +493,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton PESQUISAR;
+    private javax.swing.JButton alterar;
     private java.util.List<View.Cliente> clienteList;
     private javax.persistence.Query clienteQuery;
     private javax.swing.JTextField cod3;
@@ -390,6 +501,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private javax.swing.JTextField email2;
     private javax.swing.JTextField email3;
     private javax.persistence.EntityManager entityManager;
+    private javax.swing.JButton excluir;
     private javax.swing.JButton fechar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
