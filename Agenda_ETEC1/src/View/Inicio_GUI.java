@@ -9,11 +9,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -31,8 +34,55 @@ public class Inicio_GUI extends javax.swing.JFrame {
     String url2 = "jdbc:mysql://localhost/Aprender"; // enderço do BD
     String username = "root";        //nome de um usuário de seu BD
     String password = "";  // senha do BD
-
+ 
     //-->fim
+    // --> inicio atualiza tabela
+    
+    public static DefaultTableModel  Cliente(ResultSet rs) {
+        try {
+           ResultSetMetaData metaData = rs.getMetaData();
+         int numberOfColumns = metaData.getColumnCount();
+            Vector columnNames = new Vector();
+       // AS LINHAS ABAIXO SÃO REFERENTES AOS CAMPOS DA TABELA CLIENTE
+            columnNames.addElement("Código");
+            columnNames.addElement("Nome");
+            columnNames.addElement("E-mail");
+            columnNames.addElement("Telefone");
+         
+            Vector rows = new Vector();
+            while (rs.next()) {
+                Vector newRow = new Vector();
+                for (int i = 1; i <= numberOfColumns; i++) {
+                    newRow.addElement(rs.getObject(i));
+                }
+                rows.addElement(newRow);
+            }
+           return new DefaultTableModel(rows, columnNames);
+       } catch (Exception e) {
+
+           return null;
+        }
+        }
+
+      public void refresh(){
+    
+        try{
+            Connection conn;
+            conn = (Connection) DriverManager.getConnection(url2, username, password);     
+    
+    System.out.println("realizado");
+            String sql = "SELECT * FROM Cliente;";
+PreparedStatement pst = (PreparedStatement) conn.prepareStatement(sql);
+ResultSet rs = pst.executeQuery();
+tabela.setModel(Cliente(rs));
+}
+catch(Exception e){
+JOptionPane.showMessageDialog(null, e);
+}    
+    } 
+
+    
+    // --> fim atualiza tabela
     public Inicio_GUI() {
         initComponents();
     }
@@ -87,6 +137,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(128, 11, 128, 59);
 
+        nome.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 11)); // NOI18N
         nome.setText("NOME:");
         jPanel1.add(nome);
         nome.setBounds(20, 90, 60, 20);
@@ -297,7 +348,8 @@ public class Inicio_GUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Digite os dados corretamente","ERRO",0);
             tel2.setText("");
         }
-
+        
+        refresh();
         //fim
     }//GEN-LAST:event_salvarActionPerformed
 
@@ -375,7 +427,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
     private void alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarActionPerformed
         // -> inicio
         
-        nom = nome3.getText(); // recebendo o nome
+      nom = nome3.getText(); // recebendo o nome
       em = email3.getText(); // recebendo o email         
       tel = Long.valueOf(telefone3.getText());// recebendo o telefone
 
@@ -408,8 +460,8 @@ public class Inicio_GUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Digite os dados corretamente \n Preencher telefone novamente.","ERRO",0);
             telefone3.setText("");
         }    
-
         
+        refresh();
         // --> fim
     }//GEN-LAST:event_alterarActionPerformed
 
@@ -453,6 +505,7 @@ public class Inicio_GUI extends javax.swing.JFrame {
 
         }
         
+        refresh();       
         // --> Fim
     }//GEN-LAST:event_excluirActionPerformed
 
