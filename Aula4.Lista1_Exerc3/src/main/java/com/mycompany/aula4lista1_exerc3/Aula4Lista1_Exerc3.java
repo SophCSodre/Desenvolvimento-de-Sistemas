@@ -6,17 +6,18 @@ import java.util.Scanner;
 public class Aula4Lista1_Exerc3 {
 
     public static void main(String[] args) {
+        //Crie 3 variaveis do tipo String , solicite as informções via teclado e como resultado concactene as 3
+        
         Scanner grava = new Scanner(System.in);
+        String palavra1 = "";
+        String palavra2 = "";
+        String palavra3 = "";
         
-        String nome1 = "";
-        String nome2 = "";
-        String nome3 = "";
+        System.out.println("Digite as 3 palavras desejas:");
+        palavra1 = grava.next();
+        palavra2 = grava.next();
+        palavra3 = grava.next();
         
-        System.out.println("Digite os nomes: ");
-        nome1 = grava.next();
-        nome2 = grava.next();
-        nome3 = grava.next();
-        
-        System.out.println(nome1 + ", " + nome2 + ", " + nome3 + " são amigos desde a infância");
+        System.out.println(palavra1 + " " + palavra2 + " " + palavra3);
     }
 }
