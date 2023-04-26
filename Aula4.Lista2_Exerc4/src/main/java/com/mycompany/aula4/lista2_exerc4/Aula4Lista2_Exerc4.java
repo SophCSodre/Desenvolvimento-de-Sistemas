@@ -7,19 +7,24 @@ import java.util.Scanner;
 public class Aula4Lista2_Exerc4 {
 
     public static void main(String[] args) {
-        Scanner grava = new Scanner (System.in);
+        //Crie uma classe para efetuar a cálculo da quantidade de litros de combustível gasto em uma viagen.
+        //Outras informações:
+        //Considerar que um automóvel faz 12 km por litro.
+        //Distância = tempo * velocidade.
+        //Qdt litros = distância / 12.
+        Scanner grava = new Scanner(System.in);
         
-        double a, b, dis, qtnd;
+        double tempo = 0, veloc = 0, dist = 0, qdt = 0;
         
         System.out.println("Digite o tempo percorrido: ");
-        a = grava.nextDouble();
+        tempo = grava.nextDouble();
         
-        System.out.println("Digite a velocidade: ");
-        b = grava.nextDouble();
+        System.out.println("Digite a velocidade percorrida: ");
+        veloc = grava.nextDouble();
         
-        dis = a * b;
-        qtnd = dis / 12;
+        dist = tempo * veloc;
+        qdt = dist / 12;
         
-        System.out.println("Foi gasto " + qtnd + " litros em sua viagem");
+        System.out.println("Você gastou " + qdt + "litros em sua viagem");
     }
 }
