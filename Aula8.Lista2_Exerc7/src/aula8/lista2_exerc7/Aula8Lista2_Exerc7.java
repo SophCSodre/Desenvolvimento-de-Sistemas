@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class Aula8Lista2_Exerc7 {
 
     public static void main(String[] args) {
+        //Calcular os divisores de um nº qualquer. 
+        
         Scanner grava = new Scanner(System.in);
         
         int num = 0;
@@ -20,4 +22,4 @@ public class Aula8Lista2_Exerc7 {
             
         }while (num <100);
     }
-    }
+}
