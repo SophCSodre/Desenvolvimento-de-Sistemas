@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class Aula8Lista2_Exerc4 {
 
     public static void main(String[] args) {
+        //Solicite ao usuário 3 números e ordene do menor para o maior;
+        
         Scanner gravar = new Scanner(System.in);
 		
 	int v1 , v2 , v3, temp ;
@@ -23,25 +25,22 @@ public class Aula8Lista2_Exerc4 {
             temp =v1;
             v1= v2;
             v2 =temp;
-	
 					
 	} else if(v2>v3){
 			
             temp =v2;
             v2= v3;
             v3 =temp;
-	
 					
 	}else if(v3 <v1){
 			
             temp =v3;
             v3= v1;
             v1 =temp;
-	
 					
 	}
 	} 
 	
 	System.out.println(v1 + " " + v2 + " " + v3);
-	}
     }
+}
