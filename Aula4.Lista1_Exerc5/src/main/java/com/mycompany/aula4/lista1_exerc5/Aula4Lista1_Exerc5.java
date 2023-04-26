@@ -6,37 +6,49 @@ import java.util.Scanner;
 public class Aula4Lista1_Exerc5 {
 
     public static void main(String[] args) {
+        //Solicite via teclado um valor de 1 a 9 e mostre na tela a tabuada referente ao valor 
+        //Exemplo : Digite a tabuada solicitada 5
+        //5 x 1 = 5
+        //5 x 2 = 10...
+        //5 x 10 = 50
+        
         Scanner grava = new Scanner(System.in);
         
-        int a = 0;
-        int b1, b2, b3, b4, b5, b6, b7, b8, b9, b10 = 0;
+        int valor = 0;
+        int res1 = 0;
+        int res2 = 0;
+        int res3 = 0;
+        int res4 = 0;
+        int res5 = 0;
+        int res6 = 0;
+        int res7 = 0;
+        int res8 = 0;
+        int res9 = 0;
+        int res10 = 0;
         
         System.out.println("Digite a tabuada desejada:");
-        a = grava.nextInt();
+        valor = grava.nextInt();
         
-        b1 = a*1;
-        b2 = a*2;
-        b3 = a*3;
-        b4 = a*4;
-        b5 = a*5;
-        b6 = a*6;
-        b7 = a*7;
-        b8 = a*8;
-        b9 = a*9;
-        b10 = a*10;
+        res1 = valor * 1;
+        res2 = valor * 2;
+        res3 = valor * 3;
+        res4 = valor * 4;
+        res5 = valor * 5;
+        res6 = valor * 6;
+        res7 = valor * 7;
+        res8 = valor * 8;
+        res9 = valor * 9;
+        res10 = valor * 10;
         
-        System.out.println(a + " * 1 = " + b1);
-        System.out.println(a + " * 2 = " + b2);
-        System.out.println(a + " * 3 = " + b3);
-        System.out.println(a + " * 4 = " + b4);
-        System.out.println(a + " * 5 = " + b5);
-        System.out.println(a + " * 6 = " + b6);
-        System.out.println(a + " * 7 = " + b7);
-        System.out.println(a + " * 8 = " + b8);
-        System.out.println(a + " * 9 = " + b9);
-        System.out.println(a + " * 10 = " + b10);
-        
-        
-        
+        System.out.println(valor + " X 1" + " = " + res1);
+        System.out.println(valor + " X 2" + " = " + res2);
+        System.out.println(valor + " X 3" + " = " + res3);
+        System.out.println(valor + " X 4" + " = " + res4);
+        System.out.println(valor + " X 5" + " = " + res5);
+        System.out.println(valor + " X 6" + " = " + res6);
+        System.out.println(valor + " X 7" + " = " + res7);
+        System.out.println(valor + " X 8" + " = " + res8);
+        System.out.println(valor + " X 9" + " = " + res9);
+        System.out.println(valor + " X 10" + " = " + res10);
     }
 }
