@@ -6,40 +6,36 @@ import java.util.Scanner;
 public class Aula6Lista1_Exerc2 {
 
     public static void main(String[] args) {
+        //CRIE UMA CLASSE QUE TENHA 4 OPÇÕES DE MENU:
+        //1 - VEJA A MENSAGEM. 2 - TIRE 10% DO VALOR DESEJADO. 3 - SELECIONE A CATEGORIA. 4 - SAIR
+        
         Scanner grava = new Scanner(System.in);
         
-        int res = 0;
-        int val1 = 0;
-        double val2 = 0.0;
+        int res = 0, valor1 = 0;
+        double valor2 = 0;
         
-        System.out.println("MENU DE OPÇÕES");
-        System.out.println("1- Veja a mensagem");
-        System.out.println("2- 10% do valor desejado");
-        System.out.println("3- Selecionar");
-        System.out.println("4- Sair");
-        
+        System.out.println("MENU: \n1 - Veja a mensagem. \n2 - Tire 10% do valor \n3 - Selecione a categoria \n4 - Sair");
         res = grava.nextInt();
         
-        switch(res){
+        if(res == 1){
+            System.out.println("Olá! Esta é a mensagem para você =) ");
+        }
+        else if(res == 2){
+            System.out.println("Digite o valor desejado");
             
-            case 1:
-                System.out.println("Olá! Está é a sua mensagem! =) ");
-                break;
-                
-            case 2:
-               System.out.println("Digite o valor desejado");
-               val1 = grava.nextInt();
-               val2 = val1*0.10;
-               System.out.println("10% de " + val1 + " é: " + val2);
-               break;
-               
-            case 3:
-                System.out.println("Você selecionou a opção 3!");
-                break;
-                
-            case 4:
-                System.out.println("Saindo do sistema");
+            valor1 = grava.nextInt();
+            valor2 = valor1 * 0.10;
+            
+            System.out.println("10% de " + valor1 + " é: " + valor2);
+        }
+        else if (res == 3){
+            System.out.println("Você selecionou a opção 3");
+        }
+        else if (res == 4){
+            System.out.println("SAINDO do sistema");
+        }
+        else {
+            System.out.println("Opção inválida");
         }
     }
-    
 }
