@@ -6,16 +6,22 @@ import java.util.Scanner;
 public class Aula4Lista2_Exerc3 {
 
     public static void main(String[] args) {
+        //Solicite ao usuário um nome 
+        //solicite ao usuário um valor
+        //concatene as duas informações 
+        //Exiba o resultado
+
         Scanner grava = new Scanner(System.in);
         
         String nome = "";
-        System.out.println("Digite um nome: ");
+        double valor = 0;
+        
+        System.out.println("Digite seu nome: ");
         nome = grava.next();
         
-        int a = 0;
         System.out.println("Digite um valor: ");
-        a = grava.nextInt();
-
-        System.out.println("Seu nome é: " + nome + "\n O valor desejado é: " + a);
+        valor = grava.nextDouble();
+        
+        System.out.println("Seu nome é " + nome + " e você digitou o número " + valor);
     }
 }
