@@ -12,7 +12,6 @@ public class Aula4Lista1_Exerc1 {
         //solicite ao usuário o nome , as notas de primeiro segundo e terceiro bimestre e de como resultado a seguinte informação :
         //O Aluno (nome) teve como média a nota (média)
 
-        
         Scanner grava = new Scanner(System.in);
         
         double nota1 = 0.0;
