@@ -7,7 +7,10 @@ import javax.swing.JOptionPane;
 public class Aula14_Vetores {
 
     public static void main(String[] args) {
-        double [] valor = new double [10];
+        //Faça um programa que carregue um vetor com 10 números reais.
+        //Calcule e mostre a quantidade de números negativos e a soma dos números positivos deste vetor.
+        
+      double [] valor = new double [10];
         String total = "";
         Random gera = new Random();
         int cont = 0;
