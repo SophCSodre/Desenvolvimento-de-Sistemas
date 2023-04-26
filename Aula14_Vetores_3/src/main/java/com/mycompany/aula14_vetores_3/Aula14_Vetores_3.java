@@ -7,6 +7,11 @@ import javax.swing.JOptionPane;
 public class Aula14_Vetores_3 {
 
     public static void main(String[] args) {
+         //Faça um programa que carregue um vetor com 7 números inteiros, calcule e mostre:
+        //a) os números múltiplos de 2
+        //b) os números múltiplos de 3
+        //c) os números múltiplos de 2 e de 3
+        
         double [] valor = new double[7];
         String total1 = "";
         String total2 = "";
