@@ -6,6 +6,9 @@ import java.util.Scanner;
 public class Aula8Lista2_Exerc12 {
 
     public static void main(String[] args) {
+        //Ler três valores do teclado e dizer se eles formam um triângulo.
+        //Caso afirmativo, dizer seu tipo (equilátero, isósceles ou escaleno).
+        
         Scanner grava = new Scanner(System.in);
         
         int l1, l2, l3;
@@ -24,5 +27,4 @@ public class Aula8Lista2_Exerc12 {
             System.out.println("Triangulo isosceles");
         }
     }
-    
 }
