@@ -7,29 +7,33 @@ import java.util.Scanner;
 public class Aula4Lista1_Exerc4 {
 
     public static void main(String[] args) {
+        //Solicite via teclado 2 valores e de como resultado : 
+        //(A)+(b)= (C)
+        //(A)*(b)=(c)
+        //(A)/(b)= (c)
+        //(A)-(b)= (c)
+
         Scanner grava = new Scanner(System.in);
         
-        double a = 0;
-        double b = 0;
-        double c1 = 0;
-        double c2 = 0;
-        double c3 = 0;
-        double c4 = 0;
+        int valor1 = 0;
+        int valor2 = 0;
+        int res1 = 0;
+        int res2 = 0;
+        int res3 = 0;
+        int res4 = 0;
         
-        System.out.println("Digite dois valores:");
-        a = grava.nextDouble();
-        b = grava.nextDouble();
+        System.out.println("Digite os valores desejados:");
+        valor1 = grava.nextInt();
+        valor2 = grava.nextInt();
         
-        c1 = a + b;
-        c2 = a - b;
-        c3 = a * b;
-        c4 = a / b;
+        res1 = valor1 + valor2;
+        res2 = valor1 - valor2;
+        res3 = valor1 * valor2;
+        res4 = valor1 / valor2;
         
-        System.out.println(a + " + " + b + " = " + c1);
-        System.out.println(a + " - " + b + " = " + c2);
-        System.out.println(a + " * " + b + " = " + c3);
-        System.out.println(a + " / " + b + " = " + c4);
-        
-        
+        System.out.println(valor1 + " + " + valor2 + " = " + res1);
+        System.out.println(valor1 + " - " + valor2 + " = " + res2);
+        System.out.println(valor1 + " * " + valor2 + " = " + res3);
+        System.out.println(valor1 + " / " + valor2 + " = " + res4);
     }
 }
