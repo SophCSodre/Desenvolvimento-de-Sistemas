@@ -6,17 +6,20 @@ import java.util.Scanner;
 public class Aula4Lista3_Exerc2 {
 
     public static void main(String[] args) {
+        //Crie uma classe chamada gasto e faça a seguinte operação :
+        //Calcule quantos kilometros um carro faz por litro , utilizando a seguinte função :
+        //Litros = Km Percorrido / Tempo
+        
         Scanner grava = new Scanner(System.in);
         
-        double km, temp, l;
-        System.out.println("Digite quantos km foram percorridos: ");
+        double litros = 0, km = 0, tempo = 0;
+        
+        System.out.println("Digite os kilometros percorridos e tempo:");
         km = grava.nextDouble();
+        tempo = grava.nextDouble();
         
-        System.out.println("Digite quanto tempo foi percorrido: ");
-        temp = grava.nextDouble();
+        litros = km / tempo;
         
-        l = km / temp;
-        
-        System.out.println("Resultado: " + l);
+        System.out.println("A quantidade de litros gasto por km é de: " + litros);
     }
 }
