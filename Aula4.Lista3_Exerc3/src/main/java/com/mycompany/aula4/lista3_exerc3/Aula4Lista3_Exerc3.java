@@ -6,23 +6,23 @@ import java.util.Scanner;
 public class Aula4Lista3_Exerc3 {
 
     public static void main(String[] args) {
+        //Crie uma classe chamada Informação e faça a seguinte operação :
+        //Solicite o nome do usuário , peça a sua idade e forneça a seguinte informação :
+        //Quantos dias ela viveu.
+        //Quantas horas ela viveu.
         Scanner grava = new Scanner(System.in);
         
-        int ida = 0;
-        double dia = 0;
-        double hr = 0;
         String nome = "";
+        int idade = 0;
+        double dia = 0, hr = 0;
         
-        System.out.println("Digite seu nome: ");
+        System.out.println("Digite seu nome e idade:");
         nome = grava.next();
+        idade = grava.nextInt();
         
-        System.out.println("Digite sua idade: ");
-        ida = grava.nextInt();
+        dia = idade * 365;
+        hr = idade * 24;
         
-        dia = ida * 365;
-        hr = dia * 24;
-        
-        System.out.println("Você viveu " + dia + " dias.");
-        System.out.println("Você viveu " + hr + " horas.");
+        System.out.println("Você viveu " + dia + " dias e " + hr + " horas.");
     }
 }
