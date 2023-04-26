@@ -8,6 +8,9 @@ import javax.swing.JOptionPane;
 public class Aula14_Vetores_2 {
 
     public static void main(String[] args) {
+        //Faça um programa que leia um vetor de 5 posições de números inteiros e
+        //mostre somente os positivos.
+        
         double [] valor = new double [5];
         String total = "";
         Random gera = new Random();
